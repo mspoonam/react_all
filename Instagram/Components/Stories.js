@@ -8,7 +8,7 @@ import { Container, Content, Icon, Thumbnail, Left ,Body , Right} from "native-b
 class Stories extends Component {
     render() {
         return (
-            <View style={{ paddingTop:5 ,paddingBottom:5, backgroundColor:'cyan'}}>
+            <View style={{ paddingTop:5 ,paddingBottom:5, backgroundColor:'#e2e2e2'}}>
                         
                         <View style={{ flex: 1, flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingBottom:10 }}>
                             <Text style={{ fontWeight: "bold" }}> Stories </Text>

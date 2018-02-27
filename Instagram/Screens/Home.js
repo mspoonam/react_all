@@ -39,7 +39,7 @@ export default class Home extends React.Component {
         
         return (
             <Container style={styles.container}>
-               <MyHeader title="Poonam" leftBarItemIcon="ios-send-outline" rightBarItemIcon="ios-ice-cream-outline"/>
+               <MyHeader title="Home" leftBarItemIcon="ios-send-outline" rightBarItemIcon="ios-ice-cream-outline"/>
                     
                 <Content>
 
