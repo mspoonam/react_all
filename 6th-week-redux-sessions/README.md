@@ -1,5 +1,7 @@
 # Weekend Redux Challenges for 3rd March 2018
 
+I have solved all the questions 
+
 I have created separate scripts for each of these challenges.
 
 All you have to do is use your command line to change directory into the `6th-week-redux-sessions` folder and run
