@@ -1,68 +1,71 @@
-const initialState = {
-  profile: {
-    gender: "female",
-    name: {
-      title: "mrs",
-      first: "dânia",
-      last: "da mota"
-    },
-    phone: "015394 16261",
-    cell: "0757-275-048",
-    location: {
-      street: "2591 rua pará ",
-      city: "teixeira de freitas",
-      state: "mato grosso",
-      postcode: 31682
-    },
-    currentPlan: "free",
-    upgraded: false,
-    relationship_actions: {
-      se: "6e344ff4f1940c62fc2f7dd2f116696a",
-      contacts_status: "not_contacted",
-      contactstatus_title: "Show All",
-      call_sms: "CALL / SMS",
-      can_cancel: false,
-      can_send_reminder: true,
-      no_action: true,
-      maybe_action: true,
-      can_chat: false
-    }
-  },
-  plans: [
-    {
-      id: "33453ttt",
-      name: "gold",
-      cost: 3500
-    },
-    {
-      id: "334545tt",
-      name: "silver",
-      cost: 2500
-    }
-  ]
-};
 
+const redux = require("redux");
+const  {initialStateContactMe} = require("./userdata")
+const { toggleChatStatus } = require("./actions");
+const { TOGGLE_CHAT,CAN_CHAT_TOGGLE } = require("./common");
 /* 
 create an toggle action to toggle the can_chat  flag
 You should be able to turn the flag from true to false to true again etc.
 */
+// Created inside actions/index.js
 
 /* 
 Write a reducer to handle the above action
 Make sure to update immutably
 */
-
+const toggleChatReducer = function(state = initialStateContactMe ,action){
+    switch(action.type){
+      case TOGGLE_CHAT: 
+      return {
+        ...state ,
+          profile: {
+              ...state.profile,
+              relationship_actions:{
+                  ...state.profile.relationship_actions,
+                  can_chat: action.payload
+              }
+          }
+      }
+      default:
+        return state
+    }
+}
 /* 
   create a store with the initial data above and the action
 */
+const store = redux.createStore(toggleChatReducer)
+const firtState = store.getState()
 
 /* 
   Fire the action
 */
+
+const getChatData = (data) => data.profile.relationship_actions.can_chat
+
+const toggleFirst = toggleChatStatus(CAN_CHAT_TOGGLE(getChatData(firtState)))
+const actionToggleFirst = store.dispatch(toggleFirst)
+const afterFirstToggle = store.getState()
+
+const toggleSecond = toggleChatStatus(CAN_CHAT_TOGGLE(getChatData(afterFirstToggle)))
+const actionToggleSecond = store.dispatch(toggleSecond)
+const afterSecondToggle = store.getState()
+
 
 /* 
 expected output: modified nextState
 the store via store.getState() 
 */
 
-console.log(`what is the current chat status?`);
+
+console.log(`\nfirtState\n`);
+console.log(firtState);
+
+console.log(`\nafterFirstToggle\n`);
+console.log(afterFirstToggle);
+
+console.log(`\n afterSecongToggle \n`);
+console.log(afterSecondToggle);
+
+
+
+

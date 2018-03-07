@@ -1,4 +1,4 @@
-const  {UPGRADE_PLAN,ADD_PLAN} = require("../common")
+const  {UPGRADE_PLAN,ADD_PLAN,TOGGLE_CHAT} = require("../common")
 
 
 const UpgradeUserPlan = (currentPlan, upgraded) => {
@@ -21,6 +21,13 @@ const addValentine = ({ id, name, cost }) => {
     };
 };
 
+const toggleChatStatus = (can_chat) => {
+    return {
+        type: TOGGLE_CHAT,
+        payload: can_chat 
+    }  
+}
+
 module.exports = {
-    UpgradeUserPlan , addValentine
+    UpgradeUserPlan , addValentine , toggleChatStatus
 }
