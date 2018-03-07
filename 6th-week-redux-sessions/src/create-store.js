@@ -34,10 +34,14 @@ const initialState = {
 };
 
 /* create a store with the initial data above */
+const basicReducerWithSameData = function(unchangedState = initialState , withNoSpecificACtion) {
+    return unchangedState
+}
 
 /* 
 expected output: unmodified intitial data from 
 the store via store.getState() 
 */
-
-console.log(`Did you create a new store? Replace this message then`);
+const store = redux.createStore(basicReducerWithSameData);
+console.log(store.getState())
+// console.log(`Did you create a new store? Replace this message then`);
