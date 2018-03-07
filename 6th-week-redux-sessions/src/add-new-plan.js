@@ -1,5 +1,5 @@
 const redux = require("redux");
-const { addValentine } = require("./actions");
+const { AddValentine } = require("./actions");
 const  {ADD_PLAN} = require("./common")
 const  {initialState,valentine_plan_details} = require("./userdata")
 
@@ -34,7 +34,7 @@ const origingalPlans = store.getState()
 /* 
   Fire the action
 */
-const addValentineAction = store.dispatch(addValentine(valentine_plan_details))
+const addValentineAction = store.dispatch(AddValentine(valentine_plan_details))
 
 const nextState = store.getState()
 /* 

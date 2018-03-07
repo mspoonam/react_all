@@ -20,9 +20,9 @@ const toggleChatReducer = function(state = initialStateContactMe ,action){
         ...state ,
           profile: {
               ...state.profile,
-              relationship_actions:{
+              relationship_actions: {
                   ...state.profile.relationship_actions,
-                  can_chat: action.payload
+                  can_chat: action.update_can_chat
               }
           }
       }
@@ -57,13 +57,13 @@ the store via store.getState()
 */
 
 
-console.log(`\nfirtState\n`);
+console.log(`\n------------------------------------------------firtState------------------------------------------------\n`);
 console.log(firtState);
 
-console.log(`\nafterFirstToggle\n`);
+console.log(`\n------------------------------------------------afterFirstToggle------------------------------------------------\n`);
 console.log(afterFirstToggle);
 
-console.log(`\n afterSecongToggle \n`);
+console.log(`\n------------------------------------------------afterSecongToggle------------------------------------------------\n`);
 console.log(afterSecondToggle);
 
 

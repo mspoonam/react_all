@@ -1,8 +1,6 @@
-const valentine_plan_details = {
-    id:"33453ttt", name:"valentine special", cost:"1500" 
-}
 
-const initialState = {
+
+const initialState = {  
     profile: {
       gender: "female",
       name: {
@@ -79,7 +77,16 @@ const initialStateContactMe = {
     }
   ]
 };
+const valentine_plan_details = {
+  id:"33453ttt", name:"valentine special", cost:"1500" 
+}
+const location_details_user = {
+  street: "Garage Gully Juhu",
+  city: "Mumbai",
+  state: "Maharashtra",
+  postcode: 34345
+}
 
 module.exports = {
-    valentine_plan_details , initialState , initialStateContactMe
+    valentine_plan_details , initialState , initialStateContactMe , location_details_user
 }

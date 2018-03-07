@@ -1,4 +1,4 @@
-const  {UPGRADE_PLAN,ADD_PLAN,TOGGLE_CHAT} = require("../common")
+const  {UPGRADE_PLAN,ADD_PLAN,TOGGLE_CHAT,UPDATE_LOCATION} = require("../common")
 
 
 const UpgradeUserPlan = (currentPlan, upgraded) => {
@@ -10,7 +10,7 @@ const UpgradeUserPlan = (currentPlan, upgraded) => {
     }  
 }
 
-const addValentine = ({ id, name, cost }) => {
+const AddValentine = ({ id, name, cost }) => {
     return {
       type: ADD_PLAN,
       payload: {
@@ -21,13 +21,26 @@ const addValentine = ({ id, name, cost }) => {
     };
 };
 
+
 const toggleChatStatus = (can_chat) => {
     return {
         type: TOGGLE_CHAT,
-        payload: can_chat 
+        update_can_chat: can_chat 
     }  
 }
 
+const UpdateLocation = ({ street, city, state, postcode }) => {
+    return {
+      type: UPDATE_LOCATION,
+      payload: {
+        street,
+        city,
+        state,
+        postcode
+      }
+    };
+};
+
 module.exports = {
-    UpgradeUserPlan , addValentine , toggleChatStatus
+    UpgradeUserPlan , AddValentine , toggleChatStatus , UpdateLocation
 }
